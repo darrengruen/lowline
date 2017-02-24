@@ -1,9 +1,9 @@
 <?php
 namespace dgruen\LowLine;
 
-use funcs\StringTrait as String;
+use funcs\StringTrait as Base;
 
 class String
 {
-    use String;
+    use Base;
 }
