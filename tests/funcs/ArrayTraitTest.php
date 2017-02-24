@@ -40,6 +40,22 @@ class ArrayTraitTest extends BaseTest
             [ "5", "6", "7" ]
         );
         $this->assertCount(7, $newArray, "passed");
+
+        $resultArr = ['abc', 'def', 'ghi', 'jkl', 'mno'];
+
+        $arr = ['abc'];
+        $add1 = ['def', 'ghi'];
+        $add2 = ['jkl', 'mno'];
+
+        $this->assertEquals($this->traitObject->concat($arr, $add1, $add2), $resultArr);
+    }
+
+    /**
+     * @covers LowLine::differenceBy
+     */
+    public function testDifferenceBy()
+    {
+        $this->traitObject->differenceBy();
     }
 
     /** @covers LowLine::reverse */
