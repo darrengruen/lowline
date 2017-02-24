@@ -1,0 +1,26 @@
+{
+    "name": "dgruen/LowLine",
+    "description": "PHP port of lodash (javascript)",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Darren Green",
+            "email": "darrensgreen@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "5.7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "dgruen\\LowLine\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "dgruen\\Tests\\LowLine\\": "tests"
+        }
+    }
+}
