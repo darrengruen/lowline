@@ -13,6 +13,7 @@ trait ArrayTrait
      */
     public function chunk(array $array, $chunkSize)
     {
+        // @TODO redo this. It's currently mutating the array
         return array_chunk($array, $chunkSize);
     }
 
