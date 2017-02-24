@@ -4,14 +4,16 @@ namespace dgruen\LowLine\funcs;
 trait ArrayTrait
 {
     /**
+     * Chunk $array in smaller bits based on $chunkSize
+     *
      * Chunk $array in to smaller arrays based on $chunkSize. The final chunk
      * may or may not be the same size depending on $array size and $chunkSize
      *
-     * @param  [array] $array     Array to chunk
-     * @param  [int] $chunkSize Size of each chunk
-     * @return [array]            Multidimensional array with the chunks
+     * @param  array $array     Array to chunk
+     * @param  int   $chunkSize Size of each chunk
+     * @return array            Multidimensional array with the chunks
      */
-    public function chunk(array $array, $chunkSize)
+    public function chunk(array $array, int $chunkSize)
     {
         // @TODO redo this. It's currently mutating the array
         return array_chunk($array, $chunkSize);
@@ -19,13 +21,15 @@ trait ArrayTrait
 
     /**
      * Return array based on $array with falsey values removed
-     * @param  [array] $array Array to work against
-     * @return [array]        New array without falsey values
+     *
+     * Note that this will remove 0 values also
+     *
+     * @param  array $array Array to work against
+     * @return array        New array without falsey values
      */
     public function compact(array $array)
     {
         $newArray = [];
-
         foreach ($array as $key => $value) {
             $value ? $newArray[$key] = $value : null;
         }
@@ -36,16 +40,22 @@ trait ArrayTrait
     /**
      * Return a new array created from arrays passed in
      *
-     * @param  [array] $array Initial array to add to
-     * @param  [array]       You may pass in as many arrays as needed to concat
+     * If any associative indexes are the same, the latter overrides. Numeric indexes
+     * are not kept
+     *
+     * Any arguments that are not arrays will cause a typerror to be thrown
+     *
+     * @param  [array] Arrays to pass into the code
      * @return [array]        The new array made from input arrays
      */
-    public function concat(array $array)
+    public function concat(array ...$arrays)
     {
-        $arrays = func_get_args();
         $newArray = [];
-        foreach ($arrays as $array) {
-            $newArray = array_merge($newArray, $array);
+        foreach ($arrays as $arr) {
+            if (! is_array($arr)) {
+                continue;
+            }
+            $newArray = array_merge($newArray, $arr);
         }
         return $newArray;
     }
@@ -59,6 +69,8 @@ trait ArrayTrait
      */
     public function reverse($array)
     {
+        // @XXX Possibly consider reimplementing this
+        // to not use the built in function
         $new_array = array_reverse($array);
         return $new_array;
     }
@@ -79,12 +91,15 @@ trait ArrayTrait
     /**
      * Return the diffence between $array1 and subsequent arrays after running
      * the predicate value
+     *
      * @param [array] $array1 Array to inspect
      * @return [array] New array of filtered values
+     *
      * @TODO Implement
      */
     public function differenceBy()
     {
+        @trigger_error(sprintf('This method is not yet implemented (%s::%s)', __CLASS__, __FUNCTION__));
         foreach (func_get_args() as $arg) {
             $arg;
         }
