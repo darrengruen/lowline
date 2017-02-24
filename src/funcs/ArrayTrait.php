@@ -69,7 +69,7 @@ trait ArrayTrait
      * @param  [array] $array1 Initial array to search for differences
      * @return [array]         The array of different values
      */
-    public function difference(array $array)
+    public function difference()
     {
         $args = func_get_args();
         return call_user_func_array("array_diff", $args);
@@ -85,7 +85,7 @@ trait ArrayTrait
     public function differenceBy()
     {
         foreach (func_get_args() as $arg) {
-
+            $arg;
         }
         return null;
     }
