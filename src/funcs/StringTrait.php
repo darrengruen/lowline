@@ -11,12 +11,8 @@ trait StringTrait
      * @param  string $str String to reverse
      * @return string      Reverse of input $str
      */
-    public function stringReverse(string $str = null)
+    public function stringReverse(string $str)
     {
-        if (! $str) {
-            return '';
-        }
-
         $strArray = str_split($str, 1);
         $newArray = array_reverse($strArray);
 
