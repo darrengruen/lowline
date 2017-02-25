@@ -15,22 +15,6 @@ trait StringTrait
     }
 
     /**
-     * Reverse $str
-     *
-     * Takes input $str and returns it reversed
-     *
-     * @param  string $str String to reverse
-     * @return string      Reverse of input $str
-     */
-    public function stringReverse(string $str)
-    {
-        $strArray = str_split($str, 1);
-        $newArray = array_reverse($strArray);
-
-        return implode($newArray, '');
-    }
-
-    /**
      * Return $str in random order
      *
      * Takes input $str and returns it in a randomized order/
@@ -68,5 +52,34 @@ trait StringTrait
         }
 
         return implode($strArray, '');
+    }
+
+    /**
+     * Replace instances of $needle with $replace in $str
+     *
+     * @param  string $str     The string to search
+     * @param  string $needle  The string to replace
+     * @param  string $replace The replacement string
+     * @return string          The new string with replacements
+     */
+    public function stringReplace(string $str, string $needle, string $replace)
+    {
+        return str_replace($needle, $replace, $str);
+    }
+
+    /**
+     * Reverse $str
+     *
+     * Takes input $str and returns it reversed
+     *
+     * @param  string $str String to reverse
+     * @return string      Reverse of input $str
+     */
+    public function stringReverse(string $str)
+    {
+        $strArray = str_split($str, 1);
+        $newArray = array_reverse($strArray);
+
+        return implode($newArray, '');
     }
 }
