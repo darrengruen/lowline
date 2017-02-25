@@ -85,12 +85,11 @@ trait ArrayTrait
      * @param  [function] $func  Function to apply to each item
      * @return [array]        New array wit $func applied to each value
      */
-    public function map(array $array, $func)
+    public function map(array $array, callable $func)
     {
         $newArray = [];
         foreach ($array as $key => $value) {
             $newArray[$key] = $func($value);
-            // $newArray[$key] = call_user_func($func, $value);
         }
         return $newArray;
     }
