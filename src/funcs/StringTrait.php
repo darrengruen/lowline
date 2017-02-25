@@ -11,7 +11,7 @@ trait StringTrait
      * @param  string $str String to reverse
      * @return string      Reverse of input $str
      */
-    public function stringReverse($str = null)
+    public function stringReverse(string $str = null)
     {
         if (! $str) {
             return '';
