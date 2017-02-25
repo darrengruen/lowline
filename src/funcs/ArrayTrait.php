@@ -80,34 +80,6 @@ trait ArrayTrait
     }
 
     /**
-     * Return the diffence between $array1 and subsequent arrays after running
-     * the predicate value
-     *
-     * @param [array] $array1 Array to inspect
-     * @return [array] New array of filtered values
-     *
-     * @TODO Implement
-     */
-    public function differenceBy()
-    {
-        @trigger_error(sprintf('This method is not yet implemented (%s::%s)', __CLASS__, __FUNCTION__));
-        foreach (func_get_args() as $arg) {
-            $arg;
-        }
-        return null;
-    }
-
-    /**
-     * Return the difference between $array1 and subsequent arrays accepting a
-     * predicate "comparator" to compare elements
-     * @return [type] [description]
-     */
-    public function differenceWith()
-    {
-        return null;
-    }
-
-    /**
      * Loop over each item in $array applying $func
      * @param  array  $array Array to iterate
      * @param  [function] $func  Function to apply to each item
