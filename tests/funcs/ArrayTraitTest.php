@@ -34,36 +34,13 @@ class ArrayTraitTest extends BaseTest
     /** @covers LowLine::concat */
     public function testConcat()
     {
-        $newArray = $this->traitObject->concat(
-            [ "1", "2", "3" ],
-            [ "4" ],
-            [ "5", "6", "7" ]
-        );
+        $newArray  = $this->traitObject->concat( [ "1", "2", "3" ], [ "4" ], [ "5", "6", "7" ] );
         $this->assertCount(7, $newArray, "passed");
-
         $resultArr = ['abc', 'def', 'ghi', 'jkl', 'mno'];
-
-        $arr = ['abc'];
-        $add1 = ['def', 'ghi'];
-        $add2 = ['jkl', 'mno'];
-
+        $arr       = ['abc'];
+        $add1      = ['def', 'ghi'];
+        $add2      = ['jkl', 'mno'];
         $this->assertEquals($this->traitObject->concat($arr, $add1, $add2), $resultArr);
-    }
-
-    /**
-     * @covers LowLine::differenceBy
-     */
-    public function testDifferenceBy()
-    {
-        $this->traitObject->differenceBy();
-    }
-
-    /** @covers LowLine::reverse */
-    public function testReverse()
-    {
-        $newArray = $this->traitObject->reverse([1,2,3,4,5]);
-
-        $this->assertTrue($newArray == [5,4,3,2,1]);
     }
 
     /** @covers LowLine::difference */
@@ -93,5 +70,12 @@ class ArrayTraitTest extends BaseTest
         $array2 = [ 1.1, 2.5, 3 ];
         $newArray2 = $this->traitObject->map($array2, "floor");
         $this->assertEquals($newArray2, [ 1, 2, 3 ]);
+    }
+
+    /** @covers LowLine::reverse */
+    public function testReverse()
+    {
+        $newArray = $this->traitObject->reverse([1,2,3,4,5]);
+        $this->assertTrue($newArray == [5,4,3,2,1]);
     }
 }
