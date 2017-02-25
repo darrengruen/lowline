@@ -50,11 +50,7 @@ trait ArrayTrait
      */
     public function concat(array ...$arrays)
     {
-        $newArray = [];
-        foreach ($arrays as $arr) {
-            $newArray = array_merge($newArray, $arr);
-        }
-        return $newArray;
+        return array_merge(...$arrays);
     }
 
 
