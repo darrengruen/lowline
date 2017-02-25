@@ -79,10 +79,9 @@ trait ArrayTrait
      * @param  [array] $array1 Initial array to search for differences
      * @return [array]         The array of different values
      */
-    public function difference()
+    public function difference(array ...$arrays)
     {
-        $args = func_get_args();
-        return call_user_func_array("array_diff", $args);
+        return array_diff(...$arrays);
     }
 
     /**
@@ -123,7 +122,8 @@ trait ArrayTrait
     {
         $newArray = [];
         foreach ($array as $key => $value) {
-            $newArray[$key] = call_user_func($func, $value);
+            $newArray[$key] = $func($value);
+            // $newArray[$key] = call_user_func($func, $value);
         }
         return $newArray;
     }
