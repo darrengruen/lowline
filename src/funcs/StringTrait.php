@@ -32,7 +32,7 @@ trait StringTrait
      * @param  integer $rolls The number of times to change characters. Default is the length of $str
      * @return string        Randomized version of $str
      */
-    public function stringRandomize($str, $rolls = null)
+    public function stringRandomize(string $str, int $rolls = null)
     {
         $strlen = strlen($str);
 
