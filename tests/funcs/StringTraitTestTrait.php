@@ -1,11 +1,17 @@
 <?php
 namespace dgruen\Tests\LowLine\funcs;
 
-use dgruen\LowLine\funcs\StringTrait;
+use dgruen\LowLine\LowLine as _;
 use dgruen\Tests\LowLine\funcs\AbstractTraitTest as BaseTest;
 
 trait StringTraitTestTrait
 {
+    /** @covers dgruen\LowLine\LowLine::stringCount */
+    public function testStringCount()
+    {
+        $this->assertEquals(_::stringCount('hello'), 5);
+    }
+
     /**
      * @covers dgruen\LowLine\LowLine::stringReverse
      * @covers dgruen\LowLine\funcs\StringTrait::stringReverse

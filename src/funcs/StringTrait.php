@@ -4,6 +4,17 @@ namespace dgruen\LowLine\funcs;
 trait StringTrait
 {
     /**
+     * Return the count of characters in a string
+     *
+     * @param  string $str The string to count characters in
+     * @return int      The number of characters in the string
+     */
+    public function stringCount(string $str)
+    {
+        return mb_strlen($str);
+    }
+
+    /**
      * Reverse $str
      *
      * Takes input $str and returns it reversed
