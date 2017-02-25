@@ -64,8 +64,7 @@ trait ArrayTrait
     {
         // @XXX Possibly consider reimplementing this
         // to not use the built in function
-        $newArray = array_reverse($array);
-        return $newArray;
+        return array_reverse($array);
     }
 
     /**
