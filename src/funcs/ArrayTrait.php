@@ -31,7 +31,7 @@ trait ArrayTrait
     {
         $newArray = [];
         foreach ($array as $key => $value) {
-            $value ? $newArray[$key] = $value : null;
+            ($value && $newArray[$key] = $value);
         }
 
         return $newArray;
