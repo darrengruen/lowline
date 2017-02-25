@@ -3,6 +3,7 @@ namespace dgruen\LowLine;
 
 use InvalidArgumentException;
 use dgruen\LowLine\funcs\ArrayTrait;
+use dgruen\LowLine\funcs\StringTrait;
 use dgruen\LowLine\funcs\TestTrait;
 
 class LowLine
@@ -10,6 +11,7 @@ class LowLine
     /***************************************************************************
      * Array functions
      **************************************************************************/
-    use ArrayFunctions;
-    use TestFunctions;
+    use ArrayTrait;
+    use StringTrait;
+    use TestTrait;
 }
