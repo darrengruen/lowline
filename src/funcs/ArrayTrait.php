@@ -52,9 +52,6 @@ trait ArrayTrait
     {
         $newArray = [];
         foreach ($arrays as $arr) {
-            if (! is_array($arr)) {
-                continue;
-            }
             $newArray = array_merge($newArray, $arr);
         }
         return $newArray;
