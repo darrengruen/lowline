@@ -11,28 +11,30 @@ class TestTraitTest extends BaseTest
      * Tests
      **************************************************************************/
 
-     /**
-      * @covers _::isObject
-      */
+     /** @covers LowLine::isObject */
     public function testIsObjectNoObject()
     {
         $this->assertTrue(! $this->traitObject->isObject("string"));
         $this->assertTrue($this->traitObject->isObject(new \StdClass));
     }
 
-    /**
-     * @covers _::isNumeric
-     */
+    /** @covers LowLine::isNumeric */
     public function testIsNumeric()
     {
-        $this->assertTrue(
-            $this->traitObject->isNumeric(2)
-        );
-        $this->assertTrue(
-            ! $this->traitObject->isNumeric("hello")
-        );
-        $this->assertTrue(
-            $this->traitObject->isNumeric("25")
-        );
+        $this->assertTrue($this->traitObject->isNumeric(2));
+        $this->assertTrue(! $this->traitObject->isNumeric("hello"));
+        $this->assertTrue($this->traitObject->isNumeric("25"));
+    }
+
+    /** @covers LowLine::isString */
+    public function testIsString()
+    {
+        $this->assertTrue($this->traitObject->isString('string'));
+        $this->assertNotTrue($this->traitObject->isString(46));
+        $func = function () {
+            return;
+        };
+        $this->assertNotTrue($this->traitObject->isString($func));
+        $this->assertNotTrue($this->traitObject->isString(null));
     }
 }
