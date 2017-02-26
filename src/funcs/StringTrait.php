@@ -23,7 +23,7 @@ trait StringTrait
      * @param  integer $rolls The number of times to change characters. Default is the length of $str
      * @return string        Randomized version of $str
      */
-    public function stringRandomize(string $str, int $rolls = null)
+    public function stringRandomize(string $str, int $rolls = null): string
     {
         $strlen = strlen($str);
 
@@ -31,9 +31,7 @@ trait StringTrait
             return $str;
         }
 
-        if (! $rolls) {
-            $rolls = $strlen;
-        }
+        $rolls = $rolls ?? $strlen;
 
         $strArray  = str_split($str, 1);
         for ($i = 0; $i <= $rolls; $i++) {
